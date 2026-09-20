@@ -1,6 +1,4 @@
-/* ==========================================================================
-   Sección: Horarios (Schedules) - Diseño Glassmorphism
-   ========================================================================== */
+/* Sección: Horarios */
 
 .nx-schedule {
   padding: var(--section-py) 0;
@@ -48,22 +46,19 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  
-  /* Uso estricto de tus variables Glassmorphism */
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur); /* Soporte Safari */
+  -webkit-backdrop-filter: var(--glass-blur); 
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--glass-shadow);
-  
   transition: transform var(--transition-base), border-color var(--transition-base);
 }
 
 .nx-glass-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.15); /* Aclara un poco el borde al pasar el mouse */
+  border-color: rgba(255, 255, 255, 0.15); 
 }
 
 /* Línea decorativa superior para la tarjeta operativa */
@@ -92,13 +87,13 @@
 /* Icono Primario (Azul) */
 .nx-glass-card__icon--primary {
   color: var(--color-primary);
-  background: rgba(58, 134, 254, 0.12); /* Azul con opacidad */
+  background: rgba(58, 134, 254, 0.12); 
 }
 
 /* Icono Secundario/Acento (Ámbar) */
 .nx-glass-card__icon--accent {
   color: var(--color-accent);
-  background: rgba(254, 183, 3, 0.12); /* Ámbar con opacidad */
+  background: rgba(254, 183, 3, 0.12); 
 }
 
 /* ---- Textos de la tarjeta ---- */
@@ -162,15 +157,11 @@
 
 .nx-badge--closed {
   color: var(--color-error);
-  background: rgba(214, 69, 69, 0.12); /* Rojo con opacidad */
+  background: rgba(214, 69, 69, 0.12); 
 }
 
 /* Texto con el degradado de tu marca */
-.nx-text-gradient {
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+.nx-text-amber {
+  color: var(--color-amber);
   font-weight: var(--fw-bold);
 }
