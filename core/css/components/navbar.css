@@ -228,30 +228,32 @@ color: var(--color-text-muted);
 5. ACCIONES — CTA a la derecha
 ============================================= */
 .navbar__actions {
-grid-column: 3;
-justify-self: end;
-display: flex;
-align-items: center;
-gap: var(--space-2);
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: 2rem;
+  margin-top: -4px; 
 }
 
 .navbar__cta {
-background-color: var(--brand-amber);
-color: var(--white);
-font-weight: var(--fw-semibold);
-padding: var(--space-4) var(--space-4);
-border-radius: var(--radius-sm);
-white-space: nowrap;
-display: inline-block;
-text-decoration: none;
-position: relative;
-z-index: calc(var(--z-navbar) + 1);
-transition:
-filter var(--transition-fast),
-transform var(--transition-fast),
-box-shadow var(--transition-fast);
-visibility: visible !important;
-opacity: 1 !important;
+  background-color: var(--brand-amber);
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  z-index: calc(var(--z-navbar) + 1);
+  transition:
+    filter var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .navbar__cta:hover,
