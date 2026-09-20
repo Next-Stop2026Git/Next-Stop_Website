@@ -1,0 +1,87 @@
+/* ---- Contenedor Principal ---- */
+.cta {
+  padding-block: var(--space-8);
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta__inner {
+  width: 100%;
+  max-width: 680px; /* Ancho ajustado para centrar la atención visual */
+  padding-inline: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---- Tipografía ---- */
+.cta__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-amber);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.cta__description {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+  max-width: 540px;
+}
+
+/* ---- Botón ---- */
+.cta__actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-text); /* Color negro/oscuro contrastado */
+  color: var(--color-bg); /* Texto claro */
+  font-family: var(--font-heading);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-small);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cta__button-icon {
+  flex-shrink: 0;
+}
+
+.cta__button:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+.cta__button:active {
+  transform: translateY(0);
+}
+
+/* ---- Responsividad ---- */
+@media (max-width: 640px) {
+  .cta {
+    padding-block: var(--space-7);
+  }
+  
+  .cta__button {
+    width: 100%; /* Botón full-width en pantallas pequeñas para mejor Touch Target */
+    max-width: 280px;
+  }
+}

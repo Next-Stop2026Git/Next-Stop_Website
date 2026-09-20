@@ -1,0 +1,154 @@
+/* ==========================================================================
+   how-it-works.css — Next Stop
+   Sección de 4 pasos ("Centro de Guías"). Sin envoltorio flex externo:
+   este bloque controla su propio padding/ancho directamente.
+========================================================================== */
+
+.how-it-works {
+  padding-block: var(--section-py);
+  background-color: var(--color-bg);
+}
+
+.how-it-works__inner {
+  width: 100%;
+  max-width: var(--container-max);
+  padding-inline: var(--container-padding);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+/* ---- Encabezado ---- */
+.how-it-works__header {
+  text-align: center;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-it-works__eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.how-it-works__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  line-height: 1.2;
+}
+
+.how-it-works__description {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ---- Grid de pasos ---- */
+.how-it-works__grid {
+  display: grid;
+  /* 4 columnas fijas: son siempre exactamente 4 pasos, no una lista
+     dinámica (mismo criterio aplicado en services.css). */
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-7) var(--space-5);
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  transition: transform var(--transition-base);
+}
+
+.step:hover {
+  transform: translateY(-4px);
+}
+
+.step__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+}
+
+.step__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.step__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+}
+
+.step__text {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ---- Enlace inferior ---- */
+.how-it-works__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.how-it-works__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body);
+  transition: color var(--transition-fast);
+}
+
+.how-it-works__link svg {
+  transition: transform var(--transition-fast);
+}
+
+.how-it-works__link:hover {
+  color: var(--color-primary-dark);
+}
+
+.how-it-works__link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .how-it-works__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-7) var(--space-5);
+  }
+}
+
+@media (max-width: 640px) {
+  .how-it-works {
+    padding-block: var(--space-6);
+  }
+
+  .how-it-works__header {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .how-it-works__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .step {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

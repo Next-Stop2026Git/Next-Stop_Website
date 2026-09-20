@@ -1,0 +1,169 @@
+/* ==========================================================================
+   faq.css — Next Stop
+   Acordeón de preguntas frecuentes. La apertura/cierre se anima con
+   grid-template-rows (0fr → 1fr): el navegador calcula la altura real
+   del contenido, sin medir scrollHeight a mano en JS.
+========================================================================== */
+
+.faq {
+  padding-block: var(--section-py);
+  background-color: var(--color-bg);
+}
+
+.faq__inner {
+  width: 100%;
+  max-width: 780px; /* Un FAQ se lee mejor angosto que el ancho completo del container */
+  padding-inline: var(--container-padding);
+  margin-inline: auto;
+}
+
+/* ---- Encabezado ---- */
+.faq__header {
+  margin-bottom: var(--space-6);
+}
+
+.faq__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.faq__description {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ---- Lista de preguntas ---- */
+.faq__list {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item__heading {
+  margin: 0;
+}
+
+.faq-item__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  padding-block: var(--space-4);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-item__question {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.faq-item__chevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform var(--transition-base), color var(--transition-fast);
+}
+
+.faq-item__trigger:hover .faq-item__question {
+  color: var(--color-primary);
+}
+
+.faq-item__trigger:hover .faq-item__chevron,
+.faq-item__trigger[aria-expanded="true"] .faq-item__chevron {
+  color: var(--color-primary);
+}
+
+.faq-item__trigger[aria-expanded="true"] .faq-item__chevron {
+  transform: rotate(180deg);
+}
+
+/* Panel colapsable */
+.faq-item__answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-base) var(--ease-out-expo);
+}
+
+.faq-item.is-open .faq-item__answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-item__answer-inner {
+  overflow: hidden;
+}
+
+.faq-item__answer {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 60ch;
+  padding-bottom: var(--space-4);
+}
+
+/* ---- Pie: "¿Más dudas?" + CTA ---- */
+.faq__footer {
+  margin-top: var(--space-7);
+  text-align: center;
+}
+
+.faq__footer-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.faq__footer-text {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.faq__footer-cta {
+  display: inline-block;
+  background-color: var(--color-cta);
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+}
+
+.faq__footer-cta:hover,
+.faq__footer-cta:focus-visible {
+  filter: brightness(0.94);
+  transform: translateY(-2px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .faq {
+    padding-block: var(--space-6);
+  }
+
+  .faq__title {
+    font-size: var(--fs-h2);
+  }
+
+  .faq-item__question {
+    font-size: var(--fs-small);
+  }
+
+  .faq__footer-cta {
+    width: 100%;
+    text-align: center;
+  }
+}

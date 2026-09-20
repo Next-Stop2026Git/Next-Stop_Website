@@ -1,0 +1,116 @@
+<section class="hero" id="hero-container">
+  <div class="hero__media" aria-hidden="true">
+    <img
+      class="hero__image"
+      src="/assets/background/prueba-heronextstop2.png"
+      alt="Fondo de la sección principal"
+      fetchpriority="high"
+      decoding="async"/>
+    <div class="hero__scrim"></div>
+  </div>
+
+  <div class="hero__content container">
+    
+    <!-- Columna izquierda: texto -->
+    <div class="hero__text-column">
+      <div class="hero__badge fade-in-up" style="--delay: 0ms">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Next Stop
+      </div>
+
+      <h1 class="hero__title fade-in-up" style="--delay: 120ms">
+        Agencia de paquetería y encomiendas
+      </h1>
+      <p class="hero__subtitle fade-in-up" style="--delay: 240ms">
+        Compras asistidas, casillero en Miami y envíos entre Nicaragua y
+        Estados Unidos, con el acompañamiento que necesitas en cada proceso.
+      </p>
+
+      <div class="hero__actions fade-in-up" style="--delay: 360ms">
+        <a href="/services.html" class="hero__cta">Servicios</a>
+        <a href="https://tally.so/r/b5pQGg" class="hero__cta hero__cta--outline">Encuesta</a>
+      </div>
+    </div>
+
+    <!-- Columna derecha: cards glass -->
+    <div class="hero__cards-column">
+      <!-- Card 1: Tracking -->
+      <div class="glass-card tracking-card fade-in-up" style="--delay: 400ms">
+        <div class="card-header">
+          <span class="card-title">Rastreo de envío</span>
+          <span class="status-badge badge-warning">En tránsito</span>
+        </div>
+        <div class="route-info">
+          <span class="route-point">Managua, NIC</span>
+          <div class="route-track" aria-hidden="true">
+            <span class="route-plane">✈</span>
+          </div>
+          <span class="route-point">Miami, USA</span>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step status-pending">Recibido en Bodega (MIA)</div>
+          <div class="timeline-step status-pending">En tránsito</div>
+          <div class="timeline-step status-done">Salida: Miercoles/Viernes</div>
+          <div class="timeline-step status-done">Recolección: Lunes/Martes/Jueves</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Review -->
+      <div class="glass-card review-card fade-in-up" style="--delay: 500ms">
+        <div class="review-header">
+          <div class="avatars">
+            <div class="avatar"><img src="/assets/images/avatar1.jpg" alt="Cliente 1"></div>
+            <div class="avatar"><img src="/assets/images/avatar2.jpg" alt="Cliente 2"></div>
+            <div class="avatar"><img src="/assets/images/avatar3.jpg" alt="Cliente 3"></div>
+          </div>
+          <div class="rating">
+            <span class="score">4.9</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+          </div>
+        </div>
+        <!-- Carrusel de Reseñas -->
+        <div id="review-carousel" class="review-carousel" data-carousel="reviews" role="region" aria-label="Reseñas de clientes">
+          <div class="review-slide active" aria-live="polite">
+            <p class="review-text">"El mejor servicio de paquetería, rápido y seguro. 100% recomendado."</p>
+            <span class="review-author">— María G.</span>
+          </div>
+          <div class="review-slide">
+            <p class="review-text">"Llegó todo en perfecto estado desde Miami. Excelente atención."</p>
+            <span class="review-author">— Carlos R.</span>
+          </div>
+          <div class="review-slide">
+            <p class="review-text">"Muy puntuales con la recolección en casa. Sin duda los vuelvo a usar."</p>
+            <span class="review-author">— Ana T.</span>
+          </div>
+        </div>
+      </div>
+    </div> <!-- FIN COLUMNA DERECHA -->
+
+    <!-- Barra de stats -->
+    <div class="hero__stats-wrapper fade-in-up" style="--delay: 600ms">
+      <div class="hero__stats glass-panel">
+        <div class="stat-item">
+          <span class="stat-number" data-target="300">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">Vuelos anuales</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="2000">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">Paquetes entregados</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="72">0</span><span class="stat-symbol">h</span>
+          <span class="stat-label">Tiempo promedio</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100">0</span><span class="stat-symbol">%</span>
+          <span class="stat-label">Clientes satisfechos</span>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- ETIQUETA FALTANTE AÑADIDA: CIERRE DE .hero__content -->
+</section>

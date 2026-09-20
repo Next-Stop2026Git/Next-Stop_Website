@@ -1,0 +1,121 @@
+/* ==========================================================================
+   about-features.css
+   Sección "Por qué elegirnos" - 5 Items Centrados
+========================================================================== */
+
+.about-features {
+  padding: var(--space-8, 4rem) 0 var(--space-10, 5rem);
+  position: relative;
+  z-index: 1;
+}
+
+.features-header {
+  margin-bottom: var(--space-8, 3.5rem);
+}
+
+.features-header .eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--color-amber, #feb703); 
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.features-header .section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--color-text, #ffffff);
+  margin: 0;
+  text-align: center;
+}
+
+/* --- Flexbox para centrar 5 elementos --- */
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem 1.5rem;
+}
+
+/* --- Items Individuales --- */
+.feature-item {
+  flex: 1 1 250px; /* Crecen y se encogen, base de 250px */
+  max-width: 320px; /* Evita que se estiren demasiado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Iconos de Beneficios */
+.feature-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(58, 134, 254, 0.1); /* Fondo azul */
+  border: 1px solid rgba(58, 134, 254, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #3a86fe; /* Tu color azul */
+  box-shadow: 0 0 20px rgba(58, 134, 254, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon-wrapper {
+  background: rgba(58, 134, 254, 0.2);
+  box-shadow: 0 0 25px rgba(58, 134, 254, 0.15);
+  transform: scale(1.05);
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Textos de las tarjetas */
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text, #ffffff);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #a3a3a3);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Efecto de alternancia de colores (Íconos 2 y 4 en Amarillo)
+========================================================================== */
+.feature-item:nth-child(2) .feature-icon-wrapper,
+.feature-item:nth-child(4) .feature-icon-wrapper {
+  background: rgba(254, 183, 3, 0.1); 
+  border-color: rgba(254, 183, 3, 0.2);
+  color: #feb703; /* Amarillo/Ámbar */
+  box-shadow: 0 0 20px rgba(254, 183, 3, 0.05);
+}
+
+.feature-item:nth-child(2):hover .feature-icon-wrapper,
+.feature-item:nth-child(4):hover .feature-icon-wrapper {
+  background: rgba(254, 183, 3, 0.2);
+  box-shadow: 0 0 25px rgba(254, 183, 3, 0.15);
+}

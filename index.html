@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo/logo-nextstop1.png" type="x-icon" />
+    <title>Next Stop</title>
+
+    <!-- Metadatos Básicos -->
+    <title>Next Stop | Envio de encomiendas y compras asistidas</title>
+    <meta name="description" content="Somos una solución integral para enviar encomiendas y realizar compras asistidas desde Estados Unidos hasta Nicaragua. Trae tus compras de Miami de forma rápida y segura con nuestro servicio logístico."/>
+    <meta name="theme-color" content="#8b5cf6" />
+    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tudominio.com/" />
+    <meta property="og:title" content="Next Stop | Envio de encomiendas y compras asistidas" />
+    <meta property="og:description" content="Deja de imaginar tus productos y empieza a recibirlos. El puente entre Estados Unidos y Nicaragua está abierto."/>
+    <meta property="og:image" content="https://www.tudominio.com/assets/social-banner.jpg"/>
+
+    <!-- Tipografia-Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Css Globales -->
+    <link rel="stylesheet" href="core/css/base/variables.css" />
+    <link rel="stylesheet" href="core/css/base/typography.css" />
+    <link rel="stylesheet" href="core/css/base/reset.css" />
+    <!-- Styles Css Componentes/Layouts -->
+    <link rel="stylesheet" href="core/css/components/preloader.css" />
+    <link rel="stylesheet" href="core/css/components/navbar.css" />
+    <link rel="stylesheet" href="core/css/layout/home/hero.css" />
+    <link rel="stylesheet" href="core/css/layout/home/about.css" />
+    <link rel="stylesheet" href="core/css/layout/home/schedules.css" />
+    <link rel="stylesheet" href="core/css/layout/home/services.css" />
+    <link rel="stylesheet" href="core/css/layout/home/center-guide.css" />
+    <link rel="stylesheet" href="core/css/layout/home/offices.css" />
+    <link rel="stylesheet" href="core/css/layout/home/faq.css" />  
+    <link rel="stylesheet" href="core/css/layout/home/cta.css" />
+    <link rel="stylesheet" href="core/css/layout/home/forms.css" />
+    <link rel="stylesheet" href="core/css/components/footer.css" />
+  </head>
+
+  <body class="is-loading" data-page="home">
+    <!-- Preloader -->
+    <div class="preloader" id="main-preloader" role="status" aria-live="polite">
+      <div class="preloader__content">
+        <!-- Íconos -->
+        <div class="preloader__icon-wrapper" aria-hidden="true">
+          <svg
+            id="icon-plane"
+            class="preloader__icon active"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.6L3 8l6 5.2L7 16.5 4.5 16 3 17.5l4.5 2.5 2.5 4.5 1.5-1.5-.5-2.5 3.3-2 5.2 6c.4-.2.7-.6.6-1.1z"/>
+          </svg>
+          <svg id="icon-ship" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" class="preloader__icon" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2c1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6m7-3v4m0-12v3"/></svg>
+        </div>
+
+        <!-- Marca -->
+        <div
+          class="preloader__brand-row"
+          style="width: 100%; text-align: center">
+          <span class="preloader__brand"
+            ><span class="preloader__brand-next">Next</span
+            ><span class="preloader__brand-stop">Stop</span></span>
+        </div>
+        <!-- Barra -->
+        <div
+          class="preloader__progress-track"
+          style="background-color: #1e293b">
+          <div id="preloader-bar" class="preloader__progress-bar"></div>
+        </div>
+        <!-- Textos -->
+        <div class="preloader__meta">
+          <span
+            id="preloader-percent"
+            class="preloader__percent"
+            aria-hidden="true"
+            >0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Identificadores -->
+    <div id="navbar-container"></div>
+    <div id="hero-container"></div>
+    <div id="about-container"></div>
+    <div id="schedules-container"></div>
+    <div id="services-container"></div>
+    <div id="guide-container"></div>
+    <div id="offices-container"></div>
+    <div id="faq-container"></div>
+    <div id="cta-container"></div>
+    <div id="forms-container"></div>
+    <div id="footer-container"></div>
+
+    <!-- Script Principal -->
+    <script type="module" src="core/js/utils/loader.js"></script>
+  </body>
+</html>

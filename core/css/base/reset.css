@@ -1,0 +1,91 @@
+/* ==========================================================================
+   reset.css — Arquitectura base moderna y segura para cross-browser.
+========================================================================== */
+
+/* 1. Modelo de caja y prevención de desbordes */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Comportamiento raíz */
+html {
+  scroll-behavior: smooth;
+  /* Evita que iOS haga zoom automático al rotar el teléfono */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 3. Configuración del Body */
+body {
+  margin: 0;
+  min-height: 100vh; /* Garantiza que el body ocupe toda la pantalla siempre */
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; /* Soporte para Firefox en Mac */
+}
+
+/* 4. Medios responsivos */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  object-fit: cover; /* Previene distorsión de imágenes por defecto */
+}
+
+/* 5. Tipografía y enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+  /* Quita el feo destello azul al tocar un enlace en móviles (iOS/Android) */
+  -webkit-tap-highlight-color: transparent; 
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  /* Previene que palabras muy largas o URLs rompan el layout en móviles */
+  overflow-wrap: break-word; 
+}
+
+/* 6. Normalización de Formularios y Botones */
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0; /* Safari añade padding fantasma a veces */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Quita los estilos nativos feos de iOS en inputs */
+input, textarea, select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* 7. Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Sección: Horarios (Schedules) - Diseño Glassmorphism
+   ========================================================================== */
+
+.nx-schedule {
+  padding: var(--section-py) 0;
+  width: 100%;
+}
+
+.nx-container {
+  max-width: var(--container-max);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+/* ---- Encabezado de la Sección ---- */
+.nx-schedule__header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.nx-schedule__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-warning);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+}
+
+.nx-schedule__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---- Grid de Tarjetas ---- */
+.nx-schedule__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ---- Componente: Tarjeta Glassmorphism ---- */
+.nx-glass-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* Uso estricto de tus variables Glassmorphism */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur); /* Soporte Safari */
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--glass-shadow);
+  
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.nx-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.15); /* Aclara un poco el borde al pasar el mouse */
+}
+
+/* Línea decorativa superior para la tarjeta operativa */
+.nx-glass-card--highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+/* ---- Iconos ---- */
+.nx-glass-card__icon {
+  width: var(--space-6);
+  height: var(--space-6);
+  margin-bottom: var(--space-4);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icono Primario (Azul) */
+.nx-glass-card__icon--primary {
+  color: var(--color-primary);
+  background: rgba(58, 134, 254, 0.12); /* Azul con opacidad */
+}
+
+/* Icono Secundario/Acento (Ámbar) */
+.nx-glass-card__icon--accent {
+  color: var(--color-accent);
+  background: rgba(254, 183, 3, 0.12); /* Ámbar con opacidad */
+}
+
+/* ---- Textos de la tarjeta ---- */
+.nx-glass-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-text);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.nx-glass-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+/* ---- Lista de Horarios ---- */
+.nx-hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nx-hours-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.nx-hours-list__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.nx-hours-list__day {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  font-weight: var(--fw-regular);
+}
+
+.nx-hours-list__time {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+}
+
+/* ---- Badges y Estados ---- */
+.nx-badge {
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.nx-badge--closed {
+  color: var(--color-error);
+  background: rgba(214, 69, 69, 0.12); /* Rojo con opacidad */
+}
+
+/* Texto con el degradado de tu marca */
+.nx-text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: var(--fw-bold);
+}

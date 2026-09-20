@@ -1,0 +1,212 @@
+/* ==========================================================================
+   about-philosophy.css
+   Sección "Nuestro Propósito" - Glass Cards con SVG
+========================================================================== */
+
+.about-philosophy {
+  padding: var(--space-10, 5rem) 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Encabezado --- */
+.philosophy-header {
+  max-width: 650px;
+  margin: 0 auto var(--space-8, 3.5rem);
+  text-align: center;
+}
+
+/* Eyebrow en Amarillo */
+.philosophy-header .eyebrow {
+  margin-bottom: 0.5rem;
+  /* Usamos la variable de tu tema o un amarillo por defecto */
+  color: var(--color-amber, #feb703); 
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Título sin gradiente, color sólido */
+.philosophy-header .section-title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--color-text, #ffffff);
+}
+
+.philosophy-header .section-title span {
+  color: var(--color-text, #ffffff);
+}
+
+.philosophy-subtitle {
+  color: var(--color-text-muted, #a3a3a3);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --- Grid de Tarjetas --- */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* --- Estilo Glass Card --- */
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.03); /* Efecto vidrio base */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  
+  /* Flexbox para evitar que se oculte la info */
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              border-color 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+/* --- Contenedor e Iconos SVG --- */
+.card-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* ESTO ARREGLA EL BUG: Obliga al SVG a mantener un tamaño fijo */
+.card-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-text, #ffffff); 
+  transition: color 0.3s ease;
+}
+
+.philosophy-card h3 {
+  font-size: 1.4rem;
+  color: var(--color-text, #ffffff);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.philosophy-card p {
+  color: var(--color-text-muted, #a3a3a3);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+  flex-grow: 1; /* Empuja el contenido, igualando las alturas */
+}
+
+/* --- Lista de Valores --- */
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-grow: 1;
+}
+
+.values-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--color-text-muted, #a3a3a3);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Viñetas personalizadas para la lista */
+.values-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+}
+
+.values-list strong {
+  color: var(--color-text, #ffffff);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Efectos Hover (El efecto visual al pasar el mouse)
+========================================================================== */
+.philosophy-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Tarjeta 1: Hover Azul */
+.card-hover-blue:hover {
+  border-color: rgba(58, 134, 254, 0.5);
+  box-shadow: 0 15px 35px rgba(58, 134, 254, 0.15);
+}
+.card-hover-blue:hover .card-icon-wrapper {
+  background: rgba(58, 134, 254, 0.15);
+  border-color: rgba(58, 134, 254, 0.4);
+}
+.card-hover-blue:hover .card-icon {
+  color: #3a86fe; /* Tu color azul */
+}
+
+/* Tarjeta 2: Hover Ámbar */
+.card-hover-amber:hover {
+  border-color: rgba(254, 183, 3, 0.5);
+  box-shadow: 0 15px 35px rgba(254, 183, 3, 0.15);
+}
+.card-hover-amber:hover .card-icon-wrapper {
+  background: rgba(254, 183, 3, 0.15);
+  border-color: rgba(254, 183, 3, 0.4);
+}
+.card-hover-amber:hover .card-icon {
+  color: #feb703; /* Tu color amarillo/ámbar */
+}
+
+/* Tarjeta 3: Hover Mixto / Blanco brillante */
+.card-hover-mixed:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+}
+.card-hover-mixed:hover .card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Responsividad (Móviles y Tablets)
+========================================================================== */
+@media (max-width: 1024px) {
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Centramos la tarjeta de Valores si queda suelta en tablet */
+  .philosophy-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .philosophy-card:last-child {
+    max-width: 100%;
+  }
+}

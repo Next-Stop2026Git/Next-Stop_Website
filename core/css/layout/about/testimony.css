@@ -1,0 +1,210 @@
+/* ==========================================================================
+   about-testimonials.css (Actualizado con Carrusel y Botón Tally)
+========================================================================== */
+
+.about-testimonials {
+  padding: var(--space-8, 4rem) 0 var(--space-10, 5rem);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials-header {
+  margin-bottom: var(--space-8, 3.5rem);
+}
+
+.testimonials-header .eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--color-amber, #feb703); 
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.testimonials-header .section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--color-text, #ffffff);
+  margin: 0;
+}
+
+/* --- Contenedor del Carrusel --- */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+/* --- Pista deslizable --- */
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0; /* Espacio para la sombra del hover de las cards */
+  
+  /* Ocultar barra de scroll en todos los navegadores */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Tarjetas (Cards) --- */
+.testimonial-card {
+  /* Ancho base de la tarjeta */
+  flex: 0 0 calc(33.333% - 1.33rem); 
+  min-width: 320px;
+  scroll-snap-align: start; /* Se alinea magnéticamente al borde izquierdo */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  border-radius: 1.5rem;
+}
+
+/* Estrellas */
+.testimonial-stars {
+  display: flex;
+  gap: 0.25rem;
+  color: var(--color-amber, #feb703);
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-stars svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Texto */
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+/* Autor */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.author-avatar.bg-blue { background: #3a86fe; }
+.author-avatar.bg-amber { background: #feb703; color: #1a1a24; }
+.author-avatar.bg-mixed { background: linear-gradient(135deg, #3a86fe, #feb703); }
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text, #ffffff);
+}
+
+.author-role {
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #a3a3a3);
+}
+
+/* --- Botones del Carrusel --- */
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: rgba(58, 134, 254, 0.2); /* Hover azul */
+  border-color: rgba(58, 134, 254, 0.4);
+  color: #3a86fe;
+  transform: scale(1.1);
+}
+
+.carousel-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- Área del Botón Tally --- */
+.tally-action-wrapper {
+  margin-top: 1rem;
+}
+
+.tally-text {
+  color: var(--color-text-muted, #a3a3a3);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.btn-tally {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.btn-tally:hover svg {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 1rem); /* 2 tarjetas visibles */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    /* En móvil ocultamos las flechas laterales y dejamos que el usuario haga swipe con el dedo */
+    gap: 0;
+  }
+  .carousel-btn {
+    display: none; 
+  }
+  .testimonial-card {
+    flex: 0 0 90%; /* 1 tarjeta visible casi completa para insinuar la siguiente */
+    min-width: 280px;
+  }
+}

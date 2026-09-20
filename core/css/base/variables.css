@@ -1,0 +1,108 @@
+/* ==========================================================================
+   variables.css
+   Design tokens globales — Next Stop.
+   Arquitectura en dos capas:
+     1) Primitivos → valores crudos de marca/paleta.
+     2) Semánticos → alias con rol ("color de texto", "color de CTA").
+========================================================================== */
+
+:root {
+  /* ---- Primitivos ---- */
+  --brand-blue: #3a86fe;
+  --brand-blue-dark: #1d63d6;
+  --brand-red: #fe1944;
+  --brand-amber: #feb703;
+
+  --ink-950: #0f172a;
+  --ink-900: #1e293b;
+  --ink-700: #334155;
+  --slate-200: #e2e8f0;
+  --slate-50: #f8fafc;
+  --white: #ffffff;
+
+  /* ---- Semánticos: color (fijado en dark mode) ---- */
+  --color-bg: var(--ink-950);
+  --color-bg-alt: var(--ink-900);
+  --color-text: var(--slate-50);
+  --color-text-muted: var(--slate-200);
+  --color-border: rgba(248, 250, 252, 0.12);
+
+  --color-primary: var(--brand-blue); 
+  --color-primary-dark: var(--brand-blue-dark); 
+  --color-accent: var(--brand-amber); 
+  --color-cta: var(--brand-red); 
+
+  --color-success: #1e8e5a;
+  --color-warning: #d9a400;
+  --color-error: #d64545;
+
+  /* Degradado de marca */
+  --gradient-brand: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-amber) 100%);
+
+  /* ---- Tokens de Glassmorphism (Tarjetas y Navbar) ---- */
+  --glass-bg: rgba(15, 23, 42, 0.45); /* Fondo oscuro semitransparente */
+  --glass-border: rgba(255, 255, 255, 0.08); /* Borde sutil */
+  --glass-blur: blur(16px); /* Desenfoque estándar */
+  --glass-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+
+  /* ---- Tipografía ---- */
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  
+/* Escala ajustada: equilibrada y estilizada */
+  --fs-h1: clamp(1.85rem, 2.5vw + 1rem, 2.75rem); /* ~30px a ~44px (Hero) */
+  --fs-h2: clamp(1.35rem, 1.8vw + 0.8rem, 2rem);   /* ~21px a ~32px (Secciones) */
+  --fs-h3: clamp(1.1rem, 1vw + 0.75rem, 1.35rem);  /* ~17.5px a ~21.5px (Tarjetas) */
+  --fs-body: 1rem;                                 /* 16px (Base/Lectura) */
+  --fs-small: 0.875rem;                            /* 14px (Secundario) */
+  --fs-xs: 0.75rem;                                /* 12px (Badges/Footers) */ 
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- Espaciado (Escala de 4px) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-padding: var(--space-4);
+  
+  /* Padding vertical dinámico para secciones (ej: about, services) 
+     Evita escribir media queries en cada componente */
+  --section-py: clamp(4rem, 8vw, 7rem); 
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --navbar-height: 80px;
+  --navbar-height-mobile: 64px;
+
+  /* ---- Sombra ---- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+  /* ---- Transiciones (Curvas de aceleración premium) ---- */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* Desaceleración elegante */
+  
+  --transition-fast: 150ms var(--ease-out-expo);
+  --transition-base: 250ms var(--ease-out-expo);
+  --transition-slow: 500ms var(--ease-out-expo); /* Ideal para revelar secciones */
+
+  /* ---- Z-index ---- */
+  --z-navbar: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+  --z-preloader: 9999;
+}

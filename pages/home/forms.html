@@ -1,0 +1,86 @@
+<!-- ==========================================================================
+     SECCIÓN DE RESERVA DE CUPOS (Preparado para Tally Forms y Notion)
+     ========================================================================== -->
+<section class="booking-section" id="reserva-vuelo">
+  <div class="container">
+    <div class="glass-panel booking-container">
+      
+      <!-- Lado Izquierdo: Textos y Timer -->
+      <div class="booking-info">
+        <div class="hero__badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Próximo Vuelo
+        </div>
+        <h2 class="hero__title" style="font-size: 2rem;">Asegura tu espacio en el próximo envío</h2>
+        <p class="hero__subtitle" style="max-width: 100%; margin-bottom: var(--space-4);">
+          El cupo es limitado. Registra la información de tus paquetes antes de que la recepción cierre.
+        </p>
+        
+        <!-- Aquí inyectaremos el temporizador y la barra de progreso -->
+        <div id="booking-timer-placeholder" class="timer-placeholder">
+          <!-- Pega aquí el código del <section class="event-timer"> -->
+        </div>
+      </div>
+
+      <!-- Lado Derecho: Formulario (Activo) -->
+      <div class="booking-form-wrapper" id="booking-active-state">
+        <!-- El atributo data-register-form es la clave para que el event-timer.js lo detecte automáticamente -->
+        <form id="nextstop-booking-form" class="glass-form" data-register-form action="TU_LINK_DE_TALLY_AQUI" method="POST">
+          
+          <div class="form-group">
+            <label for="client-name">Nombre completo</label>
+            <input type="text" id="client-name" name="name" required placeholder="Ej. Juan Pérez">
+          </div>
+
+          <div class="form-group">
+            <label for="client-id">Número de Cédula</label>
+            <input type="text" id="client-id" name="idNumber" required placeholder="Ej. 001-000000-0000A">
+          </div>
+
+          <div class="form-group">
+            <label for="client-email">Correo electrónico</label>
+            <input type="email" id="client-email" name="email" required placeholder="juan@ejemplo.com">
+          </div>
+
+          <div class="form-group">
+            <label for="shipping-type">Tipo de Envío</label>
+            <select id="shipping-type" name="shippingType" required>
+              <option value="" disabled selected>Selecciona modalidad</option>
+              <option value="Marítimo">Encomiendas Nicaragua-Estados Unidos</option>
+              <option value="Aéreo"> Encomiendas Estados Unidos-Nicaragua </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="products-details">Productos a enviar</label>
+            <textarea id="products-details" name="products" rows="2" required placeholder="Ej. Zapatos, ropa, electrónicos..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="estimated-weight">Peso estimado (Lbs) - Opcional</label>
+            <input type="number" id="estimated-weight" name="weight" min="1" placeholder="Ej. 15">
+          </div>
+
+          <div class="form-group">
+            <label for="tracking-number">Número de Tracking (Opcional)</label>
+            <input type="text" id="tracking-number" name="tracking" placeholder="Ej. TBA123456789">
+          </div>
+
+          <button type="submit" class="hero__cta w-100" id="btn-submit-booking">Registrar mi paquete</button>
+          <p id="form-message" class="form-status-msg"></p>
+        </form>
+      </div>
+
+      <!-- Lado Derecho: Vuelo Cerrado (Oculto por defecto) -->
+      <div class="booking-closed-wrapper" id="booking-closed-state" style="display: none;">
+        <div class="closed-icon">✈️🔒</div>
+        <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">Recepción Cerrada</h3>
+        <p class="hero__subtitle" style="margin-bottom: var(--space-4);">
+          Este vuelo ha alcanzado su capacidad máxima o el tiempo ha expirado. Mantente atento a nuestra próxima fecha.
+        </p>
+        <button class="hero__cta hero__cta--outline" disabled style="opacity: 0.6; cursor: not-allowed;">Cupos agotados</button>
+      </div>
+
+    </div>
+  </div>
+</section>

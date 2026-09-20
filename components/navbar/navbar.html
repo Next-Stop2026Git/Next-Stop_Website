@@ -1,0 +1,179 @@
+<header class="navbar" id="site-navbar" data-navbar>
+  <div class="navbar__inner container">
+    <!-- Logo -->
+    <a href="/index.html" class="navbar__logo" aria-label="Next Stop, ir al inicio">
+      <img
+        src="/assets/logo/logo-nextstop1.png"
+        alt="Next Stop"
+        width="140"
+        height="160"
+        decoding="async"/>
+    </a>
+    
+    <!-- Navegación de Escritorio -->
+    <nav class="navbar__nav" aria-label="Principal">
+      <ul class="navbar__list">
+        <li><a href="/index.html" class="navbar__link">Inicio</a></li>
+        <li><a href="/services.html" class="navbar__link">Servicios</a></li>
+        <li><a href="/help-center.html#como-comprar" class="navbar__link">Cómo comprar</a></li>
+
+        <!-- Dropdown "Más" -->
+        <li class="navbar__item navbar__item--dropdown">
+          <button
+            type="button"
+            class="navbar__link navbar__link--trigger"
+            id="navbar-more-trigger"aria-haspopup="true"
+            aria-expanded="false" aria-controls="navbar-more-panel">Más
+            <svg
+              class="navbar__chevron"
+              width="12"
+              height="8"
+              viewBox="0 0 12 8"
+              aria-hidden="true"
+              focusable="false"
+              style="pointer-events: none"
+            >
+              <path
+                d="M1 1.5L6 6.5L11 1.5"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+          </button>
+
+          <div
+            class="navbar__panel"
+            id="navbar-more-panel"
+            role="menu"
+            aria-labelledby="navbar-more-trigger"
+          >
+            <a href="/index.html" class="navbar__panel-item" role="menuitem">
+              <span class="navbar__panel-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 11L12 4l9 7"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5 10v9a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1v-9"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="navbar__panel-text">
+                <span class="navbar__panel-title">Inicio</span>
+                <span class="navbar__panel-desc"
+                  >El puente directo para tus envíos</span
+                >
+              </span>
+            </a>
+
+            <a href="/services.html" class="navbar__panel-item" role="menuitem">
+              <span class="navbar__panel-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M21 8l-9-5-9 5 9 5 9-5z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 8v8l9 5 9-5V8"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="navbar__panel-text">
+                <span class="navbar__panel-title">Servicios</span>
+                <span class="navbar__panel-desc"
+                  >Lo que movemos por ti sin escalas</span
+                >
+              </span>
+            </a>
+
+            <a
+              href="/help-center.html#como-comprar"
+              class="navbar__panel-item"
+              role="menuitem"
+            >
+              <span class="navbar__panel-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="3"
+                    y="6"
+                    width="18"
+                    height="13"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                  <path d="M3 10h18" stroke="currentColor" stroke-width="1.6" />
+                </svg>
+              </span>
+              <span class="navbar__panel-text">
+                <span class="navbar__panel-title">Cómo comprar</span>
+                <span class="navbar__panel-desc"
+                  >La guía sencilla para tus pedidos</span
+                >
+              </span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Acciones (Botón WhatsApp y Hamburguesa) -->
+    <div class="navbar__actions">
+      <a
+        href="https://wa.me/50585974268"
+        class="navbar__cta"
+        id="navbar-contact-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+       >WhatsApp
+      </a>
+      <button
+        type="button"
+        class="navbar__burger"
+        id="navbar-burger"
+        aria-expanded="false"
+        aria-controls="navbar-mobile-menu"
+        aria-label="Abrir menú de navegación">
+        <span class="navbar__burger-line"></span>
+        <span class="navbar__burger-line"></span>
+        <span class="navbar__burger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú Móvil -->
+  <nav
+    class="navbar__mobile"
+    id="navbar-mobile-menu"
+    aria-label="Principal (móvil)"
+  >
+    <a href="/index.html" class="navbar__mobile-link">Inicio</a>
+    <a href="/services.html" class="navbar__mobile-link">Servicios</a>
+    <a href="/help-center.html#como-comprar" class="navbar__mobile-link">Cómo comprar</a>
+    <a
+      href="https://wa.me/50585974268"
+      class="navbar__mobile-cta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Escríbenos por WhatsApp
+    </a>
+  </nav>
+</header>
