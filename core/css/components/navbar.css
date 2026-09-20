@@ -235,7 +235,7 @@ color: var(--color-text-muted);
   align-items: center;
   gap: var(--space-2);
   margin-right: 2rem;
-  margin-top: 14px; 
+  margin-top: -10px; 
 }
 
 .navbar__cta {
