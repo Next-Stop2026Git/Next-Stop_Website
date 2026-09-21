@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/logo/logo-nextstop1.png" type="x-icon" />
     <title>Centro de Ayuda</title>
 
     <!-- Metadatos Básicos -->
     <title>Next Stop | Envio de encomiendas y compras asistidas</title>
-    <meta name="description" content="Somos una solución integral para enviar encomiendas y realizar compras asistidas desde Estados Unidos hasta Nicaragua. Trae tus compras de Miami de forma rápida y segura con nuestro servicio logístico."/>
+    <meta name="description" content="Somos una solución integral para enviar encomiendas y realizar compras asistidas desde Estados Unidos hasta Nicaragua. Trae tus compras de Miami de forma rápida y segura con nuestro servicio logístico." />
     <meta name="theme-color" content="#0f172a" />
     <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="next-stop-website-nine.vercel.app" />
-    <meta property="og:title" content="Next Stop | Envio de encomiendas y compras asistidas" />
+    <meta property="og:title" content="Next Stop | Envio de encomiendas y compras asistidas"/>
     <meta property="og:description" content="Deja de imaginar tus productos y empieza a recibirlos. El puente entre Estados Unidos y Nicaragua está abierto."/>
     <meta property="og:image" content="next-stop-website-nine.vercel.app/assets/background/prueba-heronextstop2.png"/>
 
@@ -21,3 +21,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Css Globales -->
+    <link rel="stylesheet" href="core/css/base/variables.css" />
+    <link rel="stylesheet" href="core/css/base/typography.css" />
+    <link rel="stylesheet" href="core/css/base/reset.css" />
+    <!-- Styles Css Componentes/Layouts -->
+    <link rel="stylesheet" href="core/css/components/navbar.css" />
+    <link rel="stylesheet" href="core/css/layout/help-center/help-hero.css" />
+    <link rel="stylesheet" href="core/css/layout/help-center/help-content.css" />
+    <link rel="stylesheet" href="core/css/components/footer.css" />
+
+
+   </head>
+
+   <body data-page="help-center">
+    <!-- Contenedor del Navbar global -->
+    <div id="navbar-container"></div>
+    <main>
+      <!-- Identificadores -->
+      <div id="help-center-hero-container"></div>
+    </main>
+    <!-- Contenedor del Footer global -->
+    <div id="footer-container"></div>
+
+
+
+    <!-- Script Principal Único -->
+    <script type="module" src="core/js/utils/loader.js"></script>
+  </body>
+</html>

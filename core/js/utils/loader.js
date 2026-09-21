@@ -1,10 +1,7 @@
-/* app.js
-   Motor central de carga de componentes de Next Stop. */
-
+/* app.js-Motor central de carga de componentes de Next Stop. */
 import { runPreloaderSequence } from './preloader.js';
 import { initNavbar } from '../app/home/navbar.js';
 runPreloaderSequence();
-
 
 // Carga un fragmento HTML en un contenedor dado por su ID
 async function loadComponent(id, path) {
@@ -63,7 +60,9 @@ const pageComponents = {
     ["about-testimony-container", "pages/about/testimony.html"],
   ], 
   services: [], 
-  "help-center": [], 
+  "help-center": [
+    ["help-center-hero-container", "pages/help-center/help-hero.html"],
+  ], 
 };
 
 // Script propio de cada página
