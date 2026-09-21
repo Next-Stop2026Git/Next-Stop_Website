@@ -1,6 +1,4 @@
-/* ==========================================================================
-   about-testimonials.css (Actualizado con Carrusel y Botón Tally)
-========================================================================== */
+/* about-testimonials.cs */
 
 .about-testimonials {
   padding: var(--space-8, 4rem) 0 var(--space-10, 5rem);
@@ -8,8 +6,13 @@
   z-index: 1;
 }
 
+/* --- Encabezado --- */
 .testimonials-header {
   margin-bottom: var(--space-8, 3.5rem);
+  text-align: center; /* Alineación corregida */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .testimonials-header .eyebrow {
@@ -19,14 +22,13 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.85rem;
-  text-aling: center;
 }
 
 .testimonials-header .section-title {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   color: var(--color-text, #ffffff);
   margin: 0;
-  text-aling: center;
+  max-width: 600px;
 }
 
 /* --- Contenedor del Carrusel --- */
@@ -35,7 +37,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
 }
 
 /* --- Pista deslizable --- */
@@ -45,7 +47,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 1rem 0; /* Espacio para la sombra del hover de las cards */
+  padding: 1rem 0; 
   
   /* Ocultar barra de scroll en todos los navegadores */
   -ms-overflow-style: none;
@@ -58,16 +60,17 @@
 
 /* --- Tarjetas (Cards) --- */
 .testimonial-card {
-  /* Ancho base de la tarjeta */
   flex: 0 0 calc(33.333% - 1.33rem); 
   min-width: 320px;
-  scroll-snap-align: start; /* Se alinea magnéticamente al borde izquierdo */
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2.5rem 2rem;
   text-align: left;
   border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Estrellas */
@@ -112,6 +115,7 @@
   font-weight: 700;
   font-size: 1.1rem;
   color: #ffffff;
+  flex-shrink: 0;
 }
 
 .author-avatar.bg-blue { background: #3a86fe; }
@@ -154,7 +158,7 @@
 }
 
 .carousel-btn:hover {
-  background: rgba(58, 134, 254, 0.2); /* Hover azul */
+  background: rgba(58, 134, 254, 0.2);
   border-color: rgba(58, 134, 254, 0.4);
   color: #3a86fe;
   transform: scale(1.1);
@@ -165,48 +169,81 @@
   height: 24px;
 }
 
-/* --- Área del Botón Tally --- */
+/* --- Área del Botón Tally (NUEVA ESTRUCTURA) --- */
 .tally-action-wrapper {
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tally-action-content {
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 600px;
+  width: 100%;
 }
 
 .tally-text {
-  color: var(--color-text-muted, #a3a3a3);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  color: var(--color-text, #ffffff);
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0;
 }
 
 .btn-tally {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.8rem;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.8rem 2rem;
   border-radius: 2rem;
   font-weight: 600;
+  background: #3a86fe; 
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap; 
 }
 
-.btn-tally:hover svg {
-  transform: translateY(-2px);
-  transition: transform 0.3s ease;
+.btn-tally:hover {
+  background: #2a6ae0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(58, 134, 254, 0.3);
+}
+
+.btn-tally .tally-icon {
+  width: 20px; 
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* --- Responsividad --- */
 @media (max-width: 1024px) {
   .testimonial-card {
-    flex: 0 0 calc(50% - 1rem); /* 2 tarjetas visibles */
+    flex: 0 0 calc(50% - 1rem); 
   }
 }
 
 @media (max-width: 768px) {
   .carousel-wrapper {
-    /* En móvil ocultamos las flechas laterales y dejamos que el usuario haga swipe con el dedo */
     gap: 0;
   }
   .carousel-btn {
     display: none; 
   }
   .testimonial-card {
-    flex: 0 0 90%; /* 1 tarjeta visible casi completa para insinuar la siguiente */
+    flex: 0 0 90%; 
     min-width: 280px;
+  }
+  .tally-action-content {
+    padding: 2rem 1.5rem;
   }
 }
