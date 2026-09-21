@@ -1,0 +1,201 @@
+/* ==========================================================================
+   BLOQUES DE GUÍA (Video y Encomiendas)
+   ========================================================================== */
+
+.guide-block {
+  padding-block: var(--space-8, 4rem);
+  background-color: var(--ink-950, #0f172a);
+  color: var(--white, #ffffff);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guide-block--alt {
+  background-color: var(--ink-900, #111827); /* Un tono muy sutilmente distinto para separar secciones */
+}
+
+.guide-block__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7, 3rem);
+  align-items: center;
+  max-width: var(--container-max, 1200px);
+  margin-inline: auto;
+  padding-inline: var(--container-padding, 1.5rem);
+}
+
+/* Selector para invertir el orden en escritorio (Imagen izq, Texto der) */
+@media (min-width: 901px) {
+  .guide-block__grid--reverse .guide-block__text {
+    order: 2;
+  }
+  .guide-block__grid--reverse .guide-block__visual {
+    order: 1;
+  }
+}
+
+/* ---- Textos y Tipografía ---- */
+.tag-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(250, 204, 21, 0.15); /* Warning color mix */
+  color: var(--color-warning, #facc15);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3, 1rem);
+}
+
+.tag-pill--alt {
+  background: rgba(0, 194, 255, 0.15);
+  color: var(--color-accent, #00c2ff);
+}
+
+.guide-block__title {
+  font-family: var(--font-heading, system-ui, sans-serif);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-3, 1rem);
+}
+
+.guide-block__desc {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin-bottom: var(--space-5, 1.5rem);
+}
+
+/* ---- Lista de Checks ---- */
+.guide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 1rem);
+}
+
+.guide-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.guide-list .check-icon {
+  stroke: var(--color-success, #4ade80);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ---- Tarjeta Informativa (Rotulación) ---- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-4, 1.5rem);
+  backdrop-filter: blur(10px);
+}
+
+.info-card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white, #ffffff);
+  margin-bottom: 0.5rem;
+}
+
+.info-card__title svg {
+  color: var(--color-accent, #00c2ff);
+}
+
+.info-card__desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+}
+
+.mock-label {
+  background: #ffffff;
+  color: #000000;
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.highlight-row {
+  background: #fff4ce; /* Fondo amarillo muy suave para destacar */
+  padding: 0.25rem 0.5rem;
+  margin: -0.25rem -0.5rem 0.5rem -0.5rem;
+  border-radius: 2px;
+}
+
+/* ---- Contenedores Visuales (Video e Imagen) ---- */
+.media-glass-wrapper {
+  position: relative;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.custom-video,
+.custom-image {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  object-fit: cover;
+}
+
+.custom-image {
+  aspect-ratio: 4/3;
+  background-color: #1e293b; /* Placeholder por si tarda en cargar */
+}
+
+.image-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success, #4ade80);
+  box-shadow: 0 0 8px var(--color-success, #4ade80);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .guide-block__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6, 2rem);
+  }
+
+  .media-glass-wrapper {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}

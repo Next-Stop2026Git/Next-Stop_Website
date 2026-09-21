@@ -62,6 +62,7 @@ const pageComponents = {
   services: [], 
   "help-center": [
     ["help-center-hero-container", "pages/help-center/help-hero.html"],
+    ["help-center-guide-container", "pages/help-center/guide.html"],
   ], 
 };
 
