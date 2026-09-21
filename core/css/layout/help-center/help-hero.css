@@ -47,35 +47,6 @@
   filter: grayscale(40%);
 }
 
-.guide-hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.98) 100%);
-}
-
-.guide-hero__glow {
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.25;
-  z-index: 1;
-}
-
-.guide-hero__glow--1 {
-  top: -10%;
-  left: 10%;
-  background: var(--color-warning, #facc15);
-}
-
-.guide-hero__glow--2 {
-  bottom: 5%;
-  right: 5%;
-  background: var(--color-accent, #00c2ff);
-  opacity: 0.15;
-}
-
 /* ---- Contenedor Principal y Layout ---- */
 .guide-hero__content {
   position: relative;
