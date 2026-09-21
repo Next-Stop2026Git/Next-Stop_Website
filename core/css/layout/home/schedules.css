@@ -162,6 +162,6 @@
 
 /* Texto con el degradado de tu marca */
 .nx-text-amber {
-  background-color: var(--brand-amber);
+  color: var(--brand-amber);
   font-weight: var(--fw-bold);
 }
