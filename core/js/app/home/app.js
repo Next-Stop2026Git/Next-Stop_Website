@@ -1,4 +1,8 @@
 import { initHeroStats } from './hero_config.js';
+export function initHeroReviews() {
+  const reviewContainer = document.querySelector('.hero-reviews');
+  if (!reviewContainer) return;
+}
 import { initAboutAnimations } from './about-config.js';
 import { initOfficesMaps } from './offices.js';
 import { initFaqAccordion } from './faq.js';
@@ -8,6 +12,7 @@ import { initFaqAccordion } from './faq.js';
 // esté listo. Ejecutamos las inicializaciones directamente.
 
 initHeroStats();
+initHeroReviews();
 initAboutAnimations();
 initOfficesMaps();
 initFaqAccordion();
