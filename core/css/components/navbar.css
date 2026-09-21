@@ -406,7 +406,7 @@ display: inline-flex;
 max-height: 65px; 
 margin-right: 10rem;
 }
-}
+
 
 @media (max-width: 380px) {
 .navbar__inner {
@@ -416,4 +416,4 @@ column-gap: var(--space-2);
 .navbar__logo img {
 max-height: 60px; 
 }
-}
+
