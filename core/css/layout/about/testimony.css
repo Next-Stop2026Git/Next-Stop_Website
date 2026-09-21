@@ -19,12 +19,14 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.85rem;
+  text-aling: center;
 }
 
 .testimonials-header .section-title {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   color: var(--color-text, #ffffff);
   margin: 0;
+  text-aling: center;
 }
 
 /* --- Contenedor del Carrusel --- */
