@@ -4,8 +4,7 @@
   padding-block: var(--space-8, 4rem);
   background-color: var(--ink-950, #0f172a);
   color: var(--white, #ffffff);
-  /* CORRECCIÓN: Fail-safe global para evitar scroll horizontal en la sección */
-  overflow-x: hidden; 
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -21,7 +20,6 @@
   max-width: var(--container-max, 1200px);
   margin-inline: auto;
   padding-inline: var(--container-padding, 1.5rem);
-  /* CORRECCIÓN: Asegura que el padding no se sume al width total en móvil */
   box-sizing: border-box; 
   width: 100%;
 }
@@ -142,7 +140,6 @@
   font-size: 0.9rem;
   line-height: 1.5;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-  /* CORRECCIÓN: Obliga a textos largos (direcciones/tracking) a saltar de línea */
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
@@ -163,7 +160,6 @@
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-  /* CORRECCIÓN: fit-content funciona mejor que max-content en grid flex para evitar desbordes */
   width: fit-content; 
   max-width: 100%;
   box-sizing: border-box;
@@ -202,7 +198,6 @@
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  /* CORRECCIÓN: Si la pantalla es muy pequeña, el badge no romperá el wrapper */
   max-width: calc(100% - 3rem); 
   white-space: nowrap;
 }
