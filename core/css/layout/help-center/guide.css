@@ -1,14 +1,18 @@
-/* BLOQUES DE GUÍA (Video y Encomiendas) */
+/* ==========================================================================
+   BLOQUES DE GUÍA (Video y Encomiendas)
+   ========================================================================== */
 
 .guide-block {
   padding-block: var(--space-8, 4rem);
+  /* Fondo original unificado */
   background-color: var(--ink-950, #0f172a);
   color: var(--white, #ffffff);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  /* Eliminé el border-top para evitar la línea divisoria y dejarlo parejo */
 }
 
 .guide-block--alt {
-  background-color: var(--ink-900, #0f172a); 
+  /* Mantenemos exactamente el mismo fondo para que se vea continuo */
+  background-color: var(--ink-950, #0f172a); 
 }
 
 .guide-block__grid {
@@ -29,6 +33,14 @@
   .guide-block__grid--reverse .guide-block__visual {
     order: 1;
   }
+}
+
+/* Añadimos esto para centrar los contenedores visuales en su columna */
+.guide-block__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* ---- Textos y Tipografía ---- */
@@ -141,24 +153,33 @@
   position: relative;
   background: rgba(15, 23, 42, 0.6);
   padding: 0.5rem;
-  border-radius: 20px;
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  /* CORRECCIÓN PRINCIPAL: El wrapper ahora se "abraza" al contenido */
+  width: max-content; 
+  max-width: 100%;
 }
 
-.custom-video,
-.custom-image {
-  width: 60%;
+.custom-video {
+  width: 100%;
+  /* Restringimos el ancho máximo para darle proporción de celular (video vertical) */
+  max-width: 280px; 
   height: auto;
-  border-radius: 20px;
+  border-radius: 18px; /* Un poco más pequeño que el wrapper (24px) */
   display: block;
-  object-fit: cover;
 }
 
 .custom-image {
+  width: 100%;
+  /* Restringimos el ancho máximo para la imagen horizontal */
+  max-width: 450px; 
+  height: auto;
   aspect-ratio: 4/3;
   background-color: #1e293b; 
+  border-radius: 18px;
+  display: block;
+  object-fit: cover;
 }
 
 .image-badge {
@@ -193,7 +214,7 @@
   }
 
   .media-glass-wrapper {
-    max-width: 600px;
+    /* Mantenemos el centrado en móvil */
     margin-inline: auto;
   }
 }
