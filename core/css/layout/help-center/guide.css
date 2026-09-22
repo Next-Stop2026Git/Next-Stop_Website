@@ -1,17 +1,15 @@
-/* ==========================================================================
-   BLOQUES DE GUÍA (Video y Encomiendas)
-   ========================================================================== */
+/* BLOQUES DE GUÍA (Video y Encomiendas) */
 
 .guide-block {
   padding-block: var(--space-8, 4rem);
-  /* Fondo original unificado */
   background-color: var(--ink-950, #0f172a);
   color: var(--white, #ffffff);
-  /* Eliminé el border-top para evitar la línea divisoria y dejarlo parejo */
+  /* CORRECCIÓN: Fail-safe global para evitar scroll horizontal en la sección */
+  overflow-x: hidden; 
+  width: 100%;
 }
 
 .guide-block--alt {
-  /* Mantenemos exactamente el mismo fondo para que se vea continuo */
   background-color: var(--ink-950, #0f172a); 
 }
 
@@ -23,6 +21,9 @@
   max-width: var(--container-max, 1200px);
   margin-inline: auto;
   padding-inline: var(--container-padding, 1.5rem);
+  /* CORRECCIÓN: Asegura que el padding no se sume al width total en móvil */
+  box-sizing: border-box; 
+  width: 100%;
 }
 
 /* Selector para invertir el orden en escritorio (Imagen izq, Texto der) */
@@ -67,6 +68,7 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--space-3, 1rem);
+  word-wrap: break-word;
 }
 
 .guide-block__desc {
@@ -107,6 +109,8 @@
   border-radius: var(--radius-md, 12px);
   padding: var(--space-4, 1.5rem);
   backdrop-filter: blur(10px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .info-card__title {
@@ -138,6 +142,10 @@
   font-size: 0.9rem;
   line-height: 1.5;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  /* CORRECCIÓN: Obliga a textos largos (direcciones/tracking) a saltar de línea */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .highlight-row {
@@ -155,8 +163,10 @@
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-  width: max-content; 
+  /* CORRECCIÓN: fit-content funciona mejor que max-content en grid flex para evitar desbordes */
+  width: fit-content; 
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .custom-video {
@@ -169,7 +179,6 @@
 
 .custom-image {
   width: 100%;
-  /* Restringimos el ancho máximo para la imagen horizontal */
   max-width: 450px; 
   height: auto;
   aspect-ratio: 4/3;
@@ -193,6 +202,9 @@
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
+  /* CORRECCIÓN: Si la pantalla es muy pequeña, el badge no romperá el wrapper */
+  max-width: calc(100% - 3rem); 
+  white-space: nowrap;
 }
 
 .dot-indicator {
@@ -201,6 +213,7 @@
   border-radius: 50%;
   background: var(--color-success, #4ade80);
   box-shadow: 0 0 8px var(--color-success, #4ade80);
+  flex-shrink: 0;
 }
 
 /* ---- Responsive ---- */
