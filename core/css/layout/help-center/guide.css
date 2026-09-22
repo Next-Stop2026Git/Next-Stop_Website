@@ -1,6 +1,4 @@
-/* ==========================================================================
-   BLOQUES DE GUÍA (Video y Encomiendas)
-   ========================================================================== */
+/* BLOQUES DE GUÍA (Video y Encomiendas) */
 
 .guide-block {
   padding-block: var(--space-8, 4rem);
@@ -10,7 +8,7 @@
 }
 
 .guide-block--alt {
-  background-color: var(--ink-900, #111827); /* Un tono muy sutilmente distinto para separar secciones */
+  background-color: var(--ink-900, #0f172a); 
 }
 
 .guide-block__grid {
@@ -151,16 +149,16 @@
 
 .custom-video,
 .custom-image {
-  width: 100%;
+  width: 60%;
   height: auto;
-  border-radius: 14px;
+  border-radius: 20px;
   display: block;
   object-fit: cover;
 }
 
 .custom-image {
   aspect-ratio: 4/3;
-  background-color: #1e293b; /* Placeholder por si tarda en cargar */
+  background-color: #1e293b; 
 }
 
 .image-badge {
