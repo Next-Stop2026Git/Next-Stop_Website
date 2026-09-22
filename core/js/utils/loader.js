@@ -63,6 +63,7 @@ const pageComponents = {
   "help-center": [
     ["help-center-hero-container", "pages/help-center/help-hero.html"],
     ["help-center-guide-container", "pages/help-center/guide.html"],
+    ["help-center-product-container", "pages/help-center/product.html"],
   ], 
 };
 
