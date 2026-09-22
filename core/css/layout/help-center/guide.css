@@ -35,7 +35,6 @@
   }
 }
 
-/* Añadimos esto para centrar los contenedores visuales en su columna */
 .guide-block__visual {
   display: flex;
   justify-content: center;
@@ -47,7 +46,7 @@
 .tag-pill {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: rgba(250, 204, 21, 0.15); /* Warning color mix */
+  background: rgba(250, 204, 21, 0.15); 
   color: var(--color-warning, #facc15);
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -142,7 +141,7 @@
 }
 
 .highlight-row {
-  background: #fff4ce; /* Fondo amarillo muy suave para destacar */
+  background: #fff4ce; 
   padding: 0.25rem 0.5rem;
   margin: -0.25rem -0.5rem 0.5rem -0.5rem;
   border-radius: 2px;
@@ -156,17 +155,15 @@
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-  /* CORRECCIÓN PRINCIPAL: El wrapper ahora se "abraza" al contenido */
   width: max-content; 
   max-width: 100%;
 }
 
 .custom-video {
   width: 100%;
-  /* Restringimos el ancho máximo para darle proporción de celular (video vertical) */
   max-width: 280px; 
   height: auto;
-  border-radius: 18px; /* Un poco más pequeño que el wrapper (24px) */
+  border-radius: 18px; 
   display: block;
 }
 
@@ -214,7 +211,6 @@
   }
 
   .media-glass-wrapper {
-    /* Mantenemos el centrado en móvil */
     margin-inline: auto;
   }
 }
